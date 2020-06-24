@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const test = (...arg) => {//const不可改變,var全域,let安全
+        console.log(...arg);//...arg不管參數多少個，個別印出來
+        console.log(arg);//傳陣列，一個參數也是陣列
+        return arg;
+    }
+    let ab = test(1);
+    console.log(ab);
+    // --------------------------------------------
+    const arr=[ "apple" , "banana" ];
+    const [ a1 , b1 ] = arr;
+
+    console.log("a is "+a1); // a is apple
+    console.log("b is "+b1); // b is banana
+    // ---
+    const obj={ fruitOne: "apple", fruitTwo: "banana" };
+    const { fruitOne: a , fruitTwo: b  } = obj;
+
+    console.log("a is "+a); // a is apple
+    console.log("b is "+b); // b is banana
+    // --------------------------------------------
+    
+</script>
+<script type="module">
+    //要使用type="module"才可以使用import
+    /*語法為 import + {名稱A, 名稱B, (...類推)} + from + 檔案路徑*/
+    import hello,{msg as msg2} from "./hello.js";
+    //如果沒有要用msg，可以只寫 import hello from "./hello.js";
+
+    hello.helloWorld();
+    console.log(msg2);
+</script>
+
+</html>
