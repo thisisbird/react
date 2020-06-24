@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const test = (...arg) => {//const不可改變,var全域,let安全
+        console.log(...arg);//...arg不管參數多少個，個別印出來
+        console.log(arg);//傳陣列，一個參數也是陣列
+        return arg;
+    }
+    a = test(1);
+    console.log(a);
+
+    
+</script>
+</html>
