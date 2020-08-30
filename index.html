@@ -30,7 +30,44 @@
     console.log("a is "+a); // a is apple
     console.log("b is "+b); // b is banana
     // --------------------------------------------
+    const personOne = {
+        name:'sally1',
+        age:22,
+        state:'One of them'
+    }
+    const personTwo = {
+        name:'sally',
+        age:32,
+        favoriteFood:'watermelon',
+        address:{
+            city:'somewhere else',
+            state:'another'
+        }
+    }
+    const personThree = {...personOne,...personTwo}
+    const {name:firstname,address:{ city }}=personTwo
+    console.log(city);
+    console.log('合併object',personThree);
     
+    
+    // ES6箭頭---------------------------------
+
+    const square = number => number*number
+    const square2 = number => {
+      return number*number
+    }
+    console.log('square',square(5),square2(4));
+
+    //-----------------------------------------
+    const jobs = [
+        {id:1,isActive:true},
+        {id:2,isActive:true},
+        {id:3,isActive:false},
+    ];
+
+    const activeJobs = jobs.filter(function(job){ return job.isActive; })
+    const activeJobs2 = jobs.filter(job => job.isActive)
+    console.log('activeJob',activeJobs,activeJobs2);
 </script>
 <script type="module">
     //要使用type="module"才可以使用import
@@ -39,7 +76,7 @@
     //如果沒有要用msg，可以只寫 import hello from "./hello.js";
 
     hello.helloWorld();
-    console.log(msg2);
+    console.log(msg2,'import');
 </script>
 
 </html>
